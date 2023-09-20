@@ -103,10 +103,17 @@ export default function Command() {
             actions={
               <ActionPanel>
                 <ActionPanel.Section>
-                  <Action.CopyToClipboard title="Copy React Component" content={`<${searchResult.r} />`} />
-                </ActionPanel.Section>
-                <ActionPanel.Section>
-                  <Action.CopyToClipboard title="Copy SVG" content={searchResult.s} />
+                  <Action.Paste content={`<${searchResult.r} />`} />
+                  <Action.CopyToClipboard title="Copy JSX" content={`<${searchResult.r} />`} />
+                  <Action.CopyToClipboard
+                    title="Copy Component Name"
+                    content={searchResult.r}
+                    shortcut={{modifiers: ["cmd", "shift"], key: "c"}}
+                  />
+                  <Action.CopyToClipboard
+                    title="Copy SVG"
+                    content={searchResult.s}
+                  />
                 </ActionPanel.Section>
                 <ActionPanel.Section title="Navigate">
                   <Action
